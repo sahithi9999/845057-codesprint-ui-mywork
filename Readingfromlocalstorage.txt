@@ -1,0 +1,11 @@
+<script>
+ var tbClients = localStorage.getItem("tbClients1");//Retrieve the stored data 
+    tbClients = JSON.parse(tbClients); //Converts string to object 
+    if(tbClients == null) //If there is no data, initialize an empty array
+     tbClients = [];
+                
+               
+                $("#tblList").html(""); $("#tblList").html( "<thead>"+ " <tr>"+ " <th>Name</th>"+ " <th>Address</th>"+ " <th>city</th>"+" <th>Package</th>"+ " <th>contact</th>"+ " </tr>"+ "</thead>"+ "<tbody>"+ "</tbody>" ); 
+                for(var i in tbClients){ var cli = JSON.parse(tbClients[i]); $("#tblList tbody").append("<tr>" + " <td>"+cli.fName+"</td>" + " <td>"+cli.street+"</td>" + " <td>"+cli.city+"</td>" +" <td>"+cli.inr+"</td>" + " <td>"+cli.phone+"</td>" + "</tr>"); }
+
+        </script>

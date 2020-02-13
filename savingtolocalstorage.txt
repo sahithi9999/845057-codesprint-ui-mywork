@@ -1,0 +1,24 @@
+function frm(){
+    var tbClients = localStorage.getItem("tbClients1");//Retrieve the stored data 
+    tbClients = JSON.parse(tbClients); //Converts string to object 
+    if(tbClients == null) //If there is no data, initialize an empty array
+     tbClients = [];
+
+    var name=document.getElementById("fName").value;
+    
+    var add=document.getElementById("street").value;
+    
+    var cty=document.getElementById("city").value;
+
+    var pac=document.getElementById("inr").value;
+   
+    var phone=document.getElementById("phone").value;
+    
+var costomer=JSON.stringify({'fName':name,'street':add,'city':cty,'inr':pac,'phone':phone});
+alert(costomer);
+tbClients.push(costomer);
+localStorage.setItem("tbClients1", JSON.stringify(tbClients));
+
+return true;
+
+  }
